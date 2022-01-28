@@ -25,9 +25,9 @@ import { message, Badge, Modal, Avatar, Dropdown, Menu, Image } from 'antd';
 import SockJS from 'sockjs-client';
 import * as Sentry from '@sentry/react';
 import { Integrations } from '@sentry/tracing';
-import iconimg from '../../pic/202201205d0d7b5e576ee603497ab6f3.png';
+
 Sentry.init({
-  dsn: '',
+  dsn: 'https://3406424fb1dc4813a62d39e844a9d0ac@o1098464.ingest.sentry.io/6122818',
   integrations: [new Integrations.BrowserTracing()],
   release: version,
   tracesSampleRate: 1.0,
@@ -232,7 +232,12 @@ export default function (props: any) {
       selectedKeys={[props.location.pathname]}
       loading={loading}
       ErrorBoundary={Sentry.ErrorBoundary}
-      logo={<Image preview={false} src={iconimg} />}
+      logo={
+        <Image
+          preview={false}
+          src="https://pic.imgdb.cn/item/61acd0dd2ab3f51d912b1986.png"
+        />
+      }
       title={
         <>
           <span style={{ fontSize: 16 }}>控制面板</span>
