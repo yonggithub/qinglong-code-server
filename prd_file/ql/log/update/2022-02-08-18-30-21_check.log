@@ -1,0 +1,748 @@
+## 开始执行... 2022-02-08 18:30:21
+
+=====> 开始检测
+---> 1. 复制通知文件
+
+---> 复制一份 /ql/sample/notify.py 为 /ql/scripts/notify.py
+
+'/ql/sample/notify.py' -> '/ql/scripts/notify.py'
+
+---> 复制一份 /ql/sample/notify.js 为 /ql/scripts/sendNotify.js
+
+'/ql/sample/notify.js' -> '/ql/scripts/sendNotify.js'
+---> 通知文件复制完成
+
+---> 2. 复制nginx配置文件
+
+'/ql/docker/nginx.conf' -> '/etc/nginx/nginx.conf'
+'/ql/docker/front.conf' -> '/etc/nginx/conf.d/front.conf'
+---> 配置文件复制完成
+
+
+=====> 检测面板
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
+    />
+    <link rel="shortcut icon" type="image/x-icon" href="/images/g5.ico" />
+    <link rel="stylesheet" href="/umi.f778bd55.css" />
+    <script>
+      window.routerBase = "/";
+    </script>
+    <script>
+      //! umi version: 3.5.20
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script src="https://gw.alipayobjects.com/os/lib/react/16.13.1/umd/react.production.min.js"></script>
+    <script src="https://gw.alipayobjects.com/os/lib/react-dom/16.13.1/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.zhimg.com/darkreader@4.9.40/darkreader.js"></script>
+    <script src="https://unpkg.zhimg.com/codemirror@5/lib/codemirror.js"></script>
+    <script src="https://unpkg.zhimg.com/codemirror@5/mode/shell/shell.js"></script>
+    <script src="https://unpkg.zhimg.com/codemirror@5/mode/python/python.js"></script>
+    <script src="https://unpkg.zhimg.com/codemirror@5/mode/javascript/javascript.js"></script>
+    <script src="https://unpkg.zhimg.com/sockjs-client@1/dist/sockjs.min.js"></script>
+    <script src="/umi.df88f575.js"></script>
+  </body>
+</html>
+
+=====> 面板服务启动正常
+
+=====> 检测nginx服务
+root        42     1  0 18:27 ?        00:00:00 nginx: master process nginx -c /etc/nginx/nginx.conf
+root        43    42  0 18:27 ?        00:00:00 nginx: worker process
+root        44    42  0 18:27 ?        00:00:00 nginx: worker process
+root        45    42  0 18:27 ?        00:00:00 nginx: worker process
+root        46    42  0 18:27 ?        00:00:00 nginx: worker process
+
+=====> nginx服务正常
+
+---> pm2日志
+
+=====> 检测后台
+
+
+
+=====> 后台服务异常，重置基础环境并重启后台
+
+---> 1. 开始检测配置文件
+
+---> 配置文件检测完成
+
+---> 2. 开始安装青龙依赖
+
+检测到 /ql 的依赖包有变化，运行 npm install...
+
+Lockfile is up-to-date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +363
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Relinking /ql/node_modules/.pnpm/@otplib+core@12.0.1/node_modules/@otplib/core from the store
+Relinking /ql/node_modules/.pnpm/@otplib+preset-default@12.0.1/node_modules/@otplib/preset-default from the store
+Relinking /ql/node_modules/.pnpm/@otplib+plugin-crypto@12.0.1/node_modules/@otplib/plugin-crypto from the store
+Relinking /ql/node_modules/.pnpm/@otplib+plugin-thirty-two@12.0.1/node_modules/@otplib/plugin-thirty-two from the store
+Packages are hard linked from the content-addressable store to the virtual store.
+  Content-addressable store is at: /config/.pnpm-store/v3
+  Virtual store is at:             node_modules/.pnpm
+Relinking /ql/node_modules/.pnpm/@sentry+hub@6.17.5/node_modules/@sentry/hub from the store
+Relinking /ql/node_modules/.pnpm/@sentry+node@6.17.5/node_modules/@sentry/node from the store
+Relinking /ql/node_modules/.pnpm/thirty-two@1.0.2/node_modules/thirty-two from the store
+Relinking /ql/node_modules/.pnpm/@sentry+core@6.17.5/node_modules/@sentry/core from the store
+Relinking /ql/node_modules/.pnpm/@sentry+utils@6.17.5/node_modules/@sentry/utils from the store
+Relinking /ql/node_modules/.pnpm/@sentry+types@6.17.5/node_modules/@sentry/types from the store
+Relinking /ql/node_modules/.pnpm/tslib@1.14.1/node_modules/tslib from the store
+Relinking /ql/node_modules/.pnpm/@sentry+minimal@6.17.5/node_modules/@sentry/minimal from the store
+Relinking /ql/node_modules/.pnpm/@sentry+tracing@6.17.5/node_modules/@sentry/tracing from the store
+Relinking /ql/node_modules/.pnpm/https-proxy-agent@5.0.0/node_modules/https-proxy-agent from the store
+Relinking /ql/node_modules/.pnpm/agent-base@6.0.2/node_modules/agent-base from the store
+Relinking /ql/node_modules/.pnpm/debug@4.3.3/node_modules/debug from the store
+Relinking /ql/node_modules/.pnpm/ms@2.1.2/node_modules/ms from the store
+Relinking /ql/node_modules/.pnpm/cookie@0.4.2/node_modules/cookie from the store
+Relinking /ql/node_modules/.pnpm/lru_map@0.3.3/node_modules/lru_map from the store
+Relinking /ql/node_modules/.pnpm/body-parser@1.19.1/node_modules/body-parser from the store
+Relinking /ql/node_modules/.pnpm/bytes@3.1.1/node_modules/bytes from the store
+Relinking /ql/node_modules/.pnpm/content-type@1.0.4/node_modules/content-type from the store
+Relinking /ql/node_modules/.pnpm/debug@2.6.9/node_modules/debug from the store
+Relinking /ql/node_modules/.pnpm/ms@2.0.0/node_modules/ms from the store
+Relinking /ql/node_modules/.pnpm/depd@1.1.2/node_modules/depd from the store
+Relinking /ql/node_modules/.pnpm/http-errors@1.8.1/node_modules/http-errors from the store
+Relinking /ql/node_modules/.pnpm/inherits@2.0.4/node_modules/inherits from the store
+Relinking /ql/node_modules/.pnpm/setprototypeof@1.2.0/node_modules/setprototypeof from the store
+Relinking /ql/node_modules/.pnpm/statuses@1.5.0/node_modules/statuses from the store
+Relinking /ql/node_modules/.pnpm/toidentifier@1.0.1/node_modules/toidentifier from the store
+Relinking /ql/node_modules/.pnpm/iconv-lite@0.4.24/node_modules/iconv-lite from the store
+Relinking /ql/node_modules/.pnpm/safer-buffer@2.1.2/node_modules/safer-buffer from the store
+Relinking /ql/node_modules/.pnpm/on-finished@2.3.0/node_modules/on-finished from the store
+Relinking /ql/node_modules/.pnpm/ee-first@1.1.1/node_modules/ee-first from the store
+Relinking /ql/node_modules/.pnpm/qs@6.9.6/node_modules/qs from the store
+Relinking /ql/node_modules/.pnpm/raw-body@2.4.2/node_modules/raw-body from the store
+Relinking /ql/node_modules/.pnpm/unpipe@1.0.0/node_modules/unpipe from the store
+Relinking /ql/node_modules/.pnpm/type-is@1.6.18/node_modules/type-is from the store
+Relinking /ql/node_modules/.pnpm/media-typer@0.3.0/node_modules/media-typer from the store
+Relinking /ql/node_modules/.pnpm/mime-types@2.1.34/node_modules/mime-types from the store
+Relinking /ql/node_modules/.pnpm/mime-db@1.51.0/node_modules/mime-db from the store
+Relinking /ql/node_modules/.pnpm/celebrate@13.0.4/node_modules/celebrate from the store
+Relinking /ql/node_modules/.pnpm/escape-html@1.0.3/node_modules/escape-html from the store
+Relinking /ql/node_modules/.pnpm/joi@17.6.0/node_modules/joi from the store
+Relinking /ql/node_modules/.pnpm/@hapi+hoek@9.2.1/node_modules/@hapi/hoek from the store
+Relinking /ql/node_modules/.pnpm/@hapi+topo@5.1.0/node_modules/@hapi/topo from the store
+Relinking /ql/node_modules/.pnpm/@sideway+address@4.1.3/node_modules/@sideway/address from the store
+Relinking /ql/node_modules/.pnpm/@sideway+formula@3.0.0/node_modules/@sideway/formula from the store
+Relinking /ql/node_modules/.pnpm/@sideway+pinpoint@2.0.0/node_modules/@sideway/pinpoint from the store
+Relinking /ql/node_modules/.pnpm/chokidar@3.5.3/node_modules/chokidar from the store
+Relinking /ql/node_modules/.pnpm/anymatch@3.1.2/node_modules/anymatch from the store
+Relinking /ql/node_modules/.pnpm/normalize-path@3.0.0/node_modules/normalize-path from the store
+Relinking /ql/node_modules/.pnpm/lodash@4.17.21/node_modules/lodash from the store
+Relinking /ql/node_modules/.pnpm/picomatch@2.3.1/node_modules/picomatch from the store
+Relinking /ql/node_modules/.pnpm/braces@3.0.2/node_modules/braces from the store
+Relinking /ql/node_modules/.pnpm/fill-range@7.0.1/node_modules/fill-range from the store
+Relinking /ql/node_modules/.pnpm/to-regex-range@5.0.1/node_modules/to-regex-range from the store
+Relinking /ql/node_modules/.pnpm/is-number@7.0.0/node_modules/is-number from the store
+Relinking /ql/node_modules/.pnpm/glob-parent@5.1.2/node_modules/glob-parent from the store
+Relinking /ql/node_modules/.pnpm/is-glob@4.0.3/node_modules/is-glob from the store
+Relinking /ql/node_modules/.pnpm/is-extglob@2.1.1/node_modules/is-extglob from the store
+Relinking /ql/node_modules/.pnpm/is-binary-path@2.1.0/node_modules/is-binary-path from the store
+Relinking /ql/node_modules/.pnpm/binary-extensions@2.2.0/node_modules/binary-extensions from the store
+Relinking /ql/node_modules/.pnpm/readdirp@3.6.0/node_modules/readdirp from the store
+Relinking /ql/node_modules/.pnpm/cors@2.8.5/node_modules/cors from the store
+Relinking /ql/node_modules/.pnpm/object-assign@4.1.1/node_modules/object-assign from the store
+Relinking /ql/node_modules/.pnpm/vary@1.1.2/node_modules/vary from the store
+Relinking /ql/node_modules/.pnpm/cron-parser@3.5.0/node_modules/cron-parser from the store
+Relinking /ql/node_modules/.pnpm/is-nan@1.3.2/node_modules/is-nan from the store
+Relinking /ql/node_modules/.pnpm/call-bind@1.0.2/node_modules/call-bind from the store
+Relinking /ql/node_modules/.pnpm/function-bind@1.1.1/node_modules/function-bind from the store
+Relinking /ql/node_modules/.pnpm/get-intrinsic@1.1.1/node_modules/get-intrinsic from the store
+Relinking /ql/node_modules/.pnpm/has@1.0.3/node_modules/has from the store
+Relinking /ql/node_modules/.pnpm/has-symbols@1.0.2/node_modules/has-symbols from the store
+Relinking /ql/node_modules/.pnpm/define-properties@1.1.3/node_modules/define-properties from the store
+Relinking /ql/node_modules/.pnpm/object-keys@1.1.1/node_modules/object-keys from the store
+Relinking /ql/node_modules/.pnpm/luxon@1.28.0/node_modules/luxon from the store
+Relinking /ql/node_modules/.pnpm/dotenv@8.6.0/node_modules/dotenv from the store
+Relinking /ql/node_modules/.pnpm/esbuild@0.14.20/node_modules/esbuild from the store
+Relinking /ql/node_modules/.pnpm/esbuild-linux-64@0.14.20/node_modules/esbuild-linux-64 from the store
+Relinking /ql/node_modules/.pnpm/express@4.17.2/node_modules/express from the store
+Relinking /ql/node_modules/.pnpm/accepts@1.3.8/node_modules/accepts from the store
+Relinking /ql/node_modules/.pnpm/negotiator@0.6.3/node_modules/negotiator from the store
+Relinking /ql/node_modules/.pnpm/array-flatten@1.1.1/node_modules/array-flatten from the store
+Relinking /ql/node_modules/.pnpm/content-disposition@0.5.4/node_modules/content-disposition from the store
+Relinking /ql/node_modules/.pnpm/safe-buffer@5.2.1/node_modules/safe-buffer from the store
+Relinking /ql/node_modules/.pnpm/cookie@0.4.1/node_modules/cookie from the store
+Relinking /ql/node_modules/.pnpm/cookie-signature@1.0.6/node_modules/cookie-signature from the store
+Relinking /ql/node_modules/.pnpm/encodeurl@1.0.2/node_modules/encodeurl from the store
+Relinking /ql/node_modules/.pnpm/etag@1.8.1/node_modules/etag from the store
+Relinking /ql/node_modules/.pnpm/finalhandler@1.1.2/node_modules/finalhandler from the store
+Relinking /ql/node_modules/.pnpm/parseurl@1.3.3/node_modules/parseurl from the store
+Relinking /ql/node_modules/.pnpm/fresh@0.5.2/node_modules/fresh from the store
+Relinking /ql/node_modules/.pnpm/merge-descriptors@1.0.1/node_modules/merge-descriptors from the store
+Relinking /ql/node_modules/.pnpm/methods@1.1.2/node_modules/methods from the store
+Relinking /ql/node_modules/.pnpm/path-to-regexp@0.1.7/node_modules/path-to-regexp from the store
+Relinking /ql/node_modules/.pnpm/proxy-addr@2.0.7/node_modules/proxy-addr from the store
+Relinking /ql/node_modules/.pnpm/forwarded@0.2.0/node_modules/forwarded from the store
+Relinking /ql/node_modules/.pnpm/ipaddr.js@1.9.1/node_modules/ipaddr.js from the store
+Relinking /ql/node_modules/.pnpm/range-parser@1.2.1/node_modules/range-parser from the store
+Relinking /ql/node_modules/.pnpm/send@0.17.2/node_modules/send from the store
+Relinking /ql/node_modules/.pnpm/destroy@1.0.4/node_modules/destroy from the store
+Relinking /ql/node_modules/.pnpm/mime@1.6.0/node_modules/mime from the store
+Relinking /ql/node_modules/.pnpm/ms@2.1.3/node_modules/ms from the store
+Relinking /ql/node_modules/.pnpm/serve-static@1.14.2/node_modules/serve-static from the store
+Relinking /ql/node_modules/.pnpm/utils-merge@1.0.1/node_modules/utils-merge from the store
+Relinking /ql/node_modules/.pnpm/express-jwt@6.1.0/node_modules/express-jwt from the store
+Relinking /ql/node_modules/.pnpm/async@1.5.2/node_modules/async from the store
+Relinking /ql/node_modules/.pnpm/express-unless@1.0.0/node_modules/express-unless from the store
+Relinking /ql/node_modules/.pnpm/jsonwebtoken@8.5.1/node_modules/jsonwebtoken from the store
+Relinking /ql/node_modules/.pnpm/jws@3.2.2/node_modules/jws from the store
+Relinking /ql/node_modules/.pnpm/jwa@1.4.1/node_modules/jwa from the store
+Relinking /ql/node_modules/.pnpm/buffer-equal-constant-time@1.0.1/node_modules/buffer-equal-constant-time from the store
+Relinking /ql/node_modules/.pnpm/ecdsa-sig-formatter@1.0.11/node_modules/ecdsa-sig-formatter from the store
+Relinking /ql/node_modules/.pnpm/lodash.includes@4.3.0/node_modules/lodash.includes from the store
+Relinking /ql/node_modules/.pnpm/lodash.isboolean@3.0.3/node_modules/lodash.isboolean from the store
+Relinking /ql/node_modules/.pnpm/lodash.isinteger@4.0.4/node_modules/lodash.isinteger from the store
+Relinking /ql/node_modules/.pnpm/lodash.isnumber@3.0.3/node_modules/lodash.isnumber from the store
+Relinking /ql/node_modules/.pnpm/lodash.isplainobject@4.0.6/node_modules/lodash.isplainobject from the store
+Relinking /ql/node_modules/.pnpm/lodash.isstring@4.0.1/node_modules/lodash.isstring from the store
+Relinking /ql/node_modules/.pnpm/lodash.once@4.1.1/node_modules/lodash.once from the store
+Relinking /ql/node_modules/.pnpm/semver@5.7.1/node_modules/semver from the store
+Relinking /ql/node_modules/.pnpm/lodash.set@4.3.2/node_modules/lodash.set from the store
+Relinking /ql/node_modules/.pnpm/express-urlrewrite@1.4.0/node_modules/express-urlrewrite from the store
+Relinking /ql/node_modules/.pnpm/path-to-regexp@1.8.0/node_modules/path-to-regexp from the store
+Relinking /ql/node_modules/.pnpm/isarray@0.0.1/node_modules/isarray from the store
+Relinking /ql/node_modules/.pnpm/got@11.8.3/node_modules/got from the store
+Relinking /ql/node_modules/.pnpm/@sindresorhus+is@4.4.0/node_modules/@sindresorhus/is from the store
+Relinking /ql/node_modules/.pnpm/@szmarczak+http-timer@4.0.6/node_modules/@szmarczak/http-timer from the store
+Relinking /ql/node_modules/.pnpm/defer-to-connect@2.0.1/node_modules/defer-to-connect from the store
+Relinking /ql/node_modules/.pnpm/@types+cacheable-request@6.0.2/node_modules/@types/cacheable-request from the store
+Relinking /ql/node_modules/.pnpm/@types+http-cache-semantics@4.0.1/node_modules/@types/http-cache-semantics from the store
+Relinking /ql/node_modules/.pnpm/@types+keyv@3.1.3/node_modules/@types/keyv from the store
+Relinking /ql/node_modules/.pnpm/@types+node@14.18.10/node_modules/@types/node from the store
+Relinking /ql/node_modules/.pnpm/@types+responselike@1.0.0/node_modules/@types/responselike from the store
+Relinking /ql/node_modules/.pnpm/cacheable-lookup@5.0.4/node_modules/cacheable-lookup from the store
+Relinking /ql/node_modules/.pnpm/cacheable-request@7.0.2/node_modules/cacheable-request from the store
+Relinking /ql/node_modules/.pnpm/clone-response@1.0.2/node_modules/clone-response from the store
+Relinking /ql/node_modules/.pnpm/mimic-response@1.0.1/node_modules/mimic-response from the store
+Relinking /ql/node_modules/.pnpm/get-stream@5.2.0/node_modules/get-stream from the store
+Relinking /ql/node_modules/.pnpm/pump@3.0.0/node_modules/pump from the store
+Relinking /ql/node_modules/.pnpm/end-of-stream@1.4.4/node_modules/end-of-stream from the store
+Relinking /ql/node_modules/.pnpm/once@1.4.0/node_modules/once from the store
+Relinking /ql/node_modules/.pnpm/wrappy@1.0.2/node_modules/wrappy from the store
+Relinking /ql/node_modules/.pnpm/http-cache-semantics@4.1.0/node_modules/http-cache-semantics from the store
+Relinking /ql/node_modules/.pnpm/keyv@4.1.1/node_modules/keyv from the store
+Relinking /ql/node_modules/.pnpm/json-buffer@3.0.1/node_modules/json-buffer from the store
+Relinking /ql/node_modules/.pnpm/lowercase-keys@2.0.0/node_modules/lowercase-keys from the store
+Relinking /ql/node_modules/.pnpm/normalize-url@6.1.0/node_modules/normalize-url from the store
+Relinking /ql/node_modules/.pnpm/responselike@2.0.0/node_modules/responselike from the store
+Relinking /ql/node_modules/.pnpm/decompress-response@6.0.0/node_modules/decompress-response from the store
+Relinking /ql/node_modules/.pnpm/mimic-response@3.1.0/node_modules/mimic-response from the store
+Relinking /ql/node_modules/.pnpm/http2-wrapper@1.0.3/node_modules/http2-wrapper from the store
+Relinking /ql/node_modules/.pnpm/quick-lru@5.1.1/node_modules/quick-lru from the store
+Relinking /ql/node_modules/.pnpm/resolve-alpn@1.2.1/node_modules/resolve-alpn from the store
+Relinking /ql/node_modules/.pnpm/p-cancelable@2.1.1/node_modules/p-cancelable from the store
+Relinking /ql/node_modules/.pnpm/hpagent@0.1.2/node_modules/hpagent from the store
+Relinking /ql/node_modules/.pnpm/iconv-lite@0.6.3/node_modules/iconv-lite from the store
+Relinking /ql/node_modules/.pnpm/nedb@1.8.0/node_modules/nedb from the store
+Relinking /ql/node_modules/.pnpm/async@0.2.10/node_modules/async from the store
+Relinking /ql/node_modules/.pnpm/binary-search-tree@0.2.5/node_modules/binary-search-tree from the store
+Relinking /ql/node_modules/.pnpm/underscore@1.4.4/node_modules/underscore from the store
+Relinking /ql/node_modules/.pnpm/localforage@1.10.0/node_modules/localforage from the store
+Relinking /ql/node_modules/.pnpm/lie@3.1.1/node_modules/lie from the store
+Relinking /ql/node_modules/.pnpm/immediate@3.0.6/node_modules/immediate from the store
+Relinking /ql/node_modules/.pnpm/mkdirp@0.5.5/node_modules/mkdirp from the store
+Relinking /ql/node_modules/.pnpm/minimist@1.2.5/node_modules/minimist from the store
+Relinking /ql/node_modules/.pnpm/node-fetch@2.6.7/node_modules/node-fetch from the store
+Relinking /ql/node_modules/.pnpm/whatwg-url@5.0.0/node_modules/whatwg-url from the store
+Relinking /ql/node_modules/.pnpm/tr46@0.0.3/node_modules/tr46 from the store
+Relinking /ql/node_modules/.pnpm/webidl-conversions@3.0.1/node_modules/webidl-conversions from the store
+Relinking /ql/node_modules/.pnpm/node-schedule@2.1.0/node_modules/node-schedule from the store
+Relinking /ql/node_modules/.pnpm/sorted-array-functions@1.3.0/node_modules/sorted-array-functions from the store
+Relinking /ql/node_modules/.pnpm/long-timeout@0.1.1/node_modules/long-timeout from the store
+Relinking /ql/node_modules/.pnpm/nodemailer@6.7.2/node_modules/nodemailer from the store
+Relinking /ql/node_modules/.pnpm/p-queue@6.6.2/node_modules/p-queue from the store
+Relinking /ql/node_modules/.pnpm/eventemitter3@4.0.7/node_modules/eventemitter3 from the store
+Relinking /ql/node_modules/.pnpm/p-timeout@3.2.0/node_modules/p-timeout from the store
+Relinking /ql/node_modules/.pnpm/p-finally@1.0.0/node_modules/p-finally from the store
+Relinking /ql/node_modules/.pnpm/reflect-metadata@0.1.13/node_modules/reflect-metadata from the store
+Relinking /ql/node_modules/.pnpm/sequelize@7.0.0-next.1/node_modules/sequelize from the store
+Relinking /ql/node_modules/.pnpm/bluebird@3.7.2/node_modules/bluebird from the store
+Relinking /ql/node_modules/.pnpm/dottie@2.0.2/node_modules/dottie from the store
+Relinking /ql/node_modules/.pnpm/inflection@1.12.0/node_modules/inflection from the store
+Relinking /ql/node_modules/.pnpm/moment-timezone@0.5.34/node_modules/moment-timezone from the store
+Relinking /ql/node_modules/.pnpm/moment@2.29.1/node_modules/moment from the store
+Relinking /ql/node_modules/.pnpm/retry-as-promised@3.2.0/node_modules/retry-as-promised from the store
+Relinking /ql/node_modules/.pnpm/any-promise@1.3.0/node_modules/any-promise from the store
+Relinking /ql/node_modules/.pnpm/semver@6.3.0/node_modules/semver from the store
+Relinking /ql/node_modules/.pnpm/sequelize-pool@2.3.0/node_modules/sequelize-pool from the store
+Relinking /ql/node_modules/.pnpm/toposort-class@1.0.1/node_modules/toposort-class from the store
+Relinking /ql/node_modules/.pnpm/uuid@3.4.0/node_modules/uuid from the store
+Relinking /ql/node_modules/.pnpm/validator@10.11.0/node_modules/validator from the store
+Relinking /ql/node_modules/.pnpm/wkx@0.4.8/node_modules/wkx from the store
+Relinking /ql/node_modules/.pnpm/serve-handler@6.1.3/node_modules/serve-handler from the store
+Relinking /ql/node_modules/.pnpm/bytes@3.0.0/node_modules/bytes from the store
+Relinking /ql/node_modules/.pnpm/content-disposition@0.5.2/node_modules/content-disposition from the store
+Relinking /ql/node_modules/.pnpm/fast-url-parser@1.1.3/node_modules/fast-url-parser from the store
+Relinking /ql/node_modules/.pnpm/punycode@1.4.1/node_modules/punycode from the store
+Relinking /ql/node_modules/.pnpm/mime-types@2.1.18/node_modules/mime-types from the store
+Relinking /ql/node_modules/.pnpm/mime-db@1.33.0/node_modules/mime-db from the store
+Relinking /ql/node_modules/.pnpm/minimatch@3.0.4/node_modules/minimatch from the store
+Relinking /ql/node_modules/.pnpm/brace-expansion@1.1.11/node_modules/brace-expansion from the store
+Relinking /ql/node_modules/.pnpm/balanced-match@1.0.2/node_modules/balanced-match from the store
+Relinking /ql/node_modules/.pnpm/concat-map@0.0.1/node_modules/concat-map from the store
+Relinking /ql/node_modules/.pnpm/path-is-inside@1.0.2/node_modules/path-is-inside from the store
+Relinking /ql/node_modules/.pnpm/path-to-regexp@2.2.1/node_modules/path-to-regexp from the store
+Relinking /ql/node_modules/.pnpm/range-parser@1.2.0/node_modules/range-parser from the store
+Relinking /ql/node_modules/.pnpm/sockjs@0.3.24/node_modules/sockjs from the store
+Relinking /ql/node_modules/.pnpm/faye-websocket@0.11.4/node_modules/faye-websocket from the store
+Relinking /ql/node_modules/.pnpm/websocket-driver@0.7.4/node_modules/websocket-driver from the store
+Relinking /ql/node_modules/.pnpm/http-parser-js@0.5.5/node_modules/http-parser-js from the store
+Relinking /ql/node_modules/.pnpm/websocket-extensions@0.1.4/node_modules/websocket-extensions from the store
+Relinking /ql/node_modules/.pnpm/uuid@8.3.2/node_modules/uuid from the store
+Relinking /ql/node_modules/.pnpm/sqlite3@5.0.2/node_modules/sqlite3 from the store
+Relinking /ql/node_modules/.pnpm/node-addon-api@3.2.1/node_modules/node-addon-api from the store
+Relinking /ql/node_modules/.pnpm/node-pre-gyp@0.11.0/node_modules/node-pre-gyp from the store
+Relinking /ql/node_modules/.pnpm/detect-libc@1.0.3/node_modules/detect-libc from the store
+Relinking /ql/node_modules/.pnpm/needle@2.9.1/node_modules/needle from the store
+Relinking /ql/node_modules/.pnpm/debug@3.2.7/node_modules/debug from the store
+Relinking /ql/node_modules/.pnpm/sax@1.2.4/node_modules/sax from the store
+Relinking /ql/node_modules/.pnpm/nopt@4.0.3/node_modules/nopt from the store
+Relinking /ql/node_modules/.pnpm/abbrev@1.1.1/node_modules/abbrev from the store
+Relinking /ql/node_modules/.pnpm/osenv@0.1.5/node_modules/osenv from the store
+Relinking /ql/node_modules/.pnpm/os-homedir@1.0.2/node_modules/os-homedir from the store
+Relinking /ql/node_modules/.pnpm/os-tmpdir@1.0.2/node_modules/os-tmpdir from the store
+Relinking /ql/node_modules/.pnpm/npm-packlist@1.4.8/node_modules/npm-packlist from the store
+Relinking /ql/node_modules/.pnpm/ignore-walk@3.0.4/node_modules/ignore-walk from the store
+Relinking /ql/node_modules/.pnpm/minimatch@3.0.5/node_modules/minimatch from the store
+Relinking /ql/node_modules/.pnpm/npm-bundled@1.1.2/node_modules/npm-bundled from the store
+Relinking /ql/node_modules/.pnpm/npm-normalize-package-bin@1.0.1/node_modules/npm-normalize-package-bin from the store
+Relinking /ql/node_modules/.pnpm/npmlog@4.1.2/node_modules/npmlog from the store
+Relinking /ql/node_modules/.pnpm/are-we-there-yet@1.1.7/node_modules/are-we-there-yet from the store
+Relinking /ql/node_modules/.pnpm/delegates@1.0.0/node_modules/delegates from the store
+Relinking /ql/node_modules/.pnpm/readable-stream@2.3.7/node_modules/readable-stream from the store
+Relinking /ql/node_modules/.pnpm/core-util-is@1.0.3/node_modules/core-util-is from the store
+Relinking /ql/node_modules/.pnpm/safe-buffer@5.1.2/node_modules/safe-buffer from the store
+Relinking /ql/node_modules/.pnpm/isarray@1.0.0/node_modules/isarray from the store
+Relinking /ql/node_modules/.pnpm/console-control-strings@1.1.0/node_modules/console-control-strings from the store
+Relinking /ql/node_modules/.pnpm/string_decoder@1.1.1/node_modules/string_decoder from the store
+Relinking /ql/node_modules/.pnpm/util-deprecate@1.0.2/node_modules/util-deprecate from the store
+Relinking /ql/node_modules/.pnpm/gauge@2.7.4/node_modules/gauge from the store
+Relinking /ql/node_modules/.pnpm/aproba@1.2.0/node_modules/aproba from the store
+Relinking /ql/node_modules/.pnpm/process-nextick-args@2.0.1/node_modules/process-nextick-args from the store
+Relinking /ql/node_modules/.pnpm/has-unicode@2.0.1/node_modules/has-unicode from the store
+Relinking /ql/node_modules/.pnpm/signal-exit@3.0.7/node_modules/signal-exit from the store
+Relinking /ql/node_modules/.pnpm/string-width@1.0.2/node_modules/string-width from the store
+Relinking /ql/node_modules/.pnpm/code-point-at@1.1.0/node_modules/code-point-at from the store
+Relinking /ql/node_modules/.pnpm/is-fullwidth-code-point@1.0.0/node_modules/is-fullwidth-code-point from the store
+Relinking /ql/node_modules/.pnpm/number-is-nan@1.0.1/node_modules/number-is-nan from the store
+Relinking /ql/node_modules/.pnpm/strip-ansi@3.0.1/node_modules/strip-ansi from the store
+Relinking /ql/node_modules/.pnpm/ansi-regex@2.1.1/node_modules/ansi-regex from the store
+Relinking /ql/node_modules/.pnpm/wide-align@1.1.5/node_modules/wide-align from the store
+Relinking /ql/node_modules/.pnpm/set-blocking@2.0.0/node_modules/set-blocking from the store
+Relinking /ql/node_modules/.pnpm/rc@1.2.8/node_modules/rc from the store
+Relinking /ql/node_modules/.pnpm/deep-extend@0.6.0/node_modules/deep-extend from the store
+Relinking /ql/node_modules/.pnpm/ini@1.3.8/node_modules/ini from the store
+Relinking /ql/node_modules/.pnpm/strip-json-comments@2.0.1/node_modules/strip-json-comments from the store
+Relinking /ql/node_modules/.pnpm/rimraf@2.7.1/node_modules/rimraf from the store
+Relinking /ql/node_modules/.pnpm/glob@7.2.0/node_modules/glob from the store
+Relinking /ql/node_modules/.pnpm/fs.realpath@1.0.0/node_modules/fs.realpath from the store
+Relinking /ql/node_modules/.pnpm/inflight@1.0.6/node_modules/inflight from the store
+Relinking /ql/node_modules/.pnpm/path-is-absolute@1.0.1/node_modules/path-is-absolute from the store
+Relinking /ql/node_modules/.pnpm/tar@4.4.19/node_modules/tar from the store
+Relinking /ql/node_modules/.pnpm/chownr@1.1.4/node_modules/chownr from the store
+Relinking /ql/node_modules/.pnpm/fs-minipass@1.2.7/node_modules/fs-minipass from the store
+Relinking /ql/node_modules/.pnpm/minipass@2.9.0/node_modules/minipass from the store
+Relinking /ql/node_modules/.pnpm/yallist@3.1.1/node_modules/yallist from the store
+Relinking /ql/node_modules/.pnpm/minizlib@1.3.3/node_modules/minizlib from the store
+Relinking /ql/node_modules/.pnpm/node-gyp@3.8.0/node_modules/node-gyp from the store
+Relinking /ql/node_modules/.pnpm/fstream@1.0.12/node_modules/fstream from the store
+Relinking /ql/node_modules/.pnpm/graceful-fs@4.2.9/node_modules/graceful-fs from the store
+Relinking /ql/node_modules/.pnpm/nopt@3.0.6/node_modules/nopt from the store
+Relinking /ql/node_modules/.pnpm/request@2.88.2/node_modules/request from the store
+Relinking /ql/node_modules/.pnpm/aws-sign2@0.7.0/node_modules/aws-sign2 from the store
+Relinking /ql/node_modules/.pnpm/aws4@1.11.0/node_modules/aws4 from the store
+Relinking /ql/node_modules/.pnpm/caseless@0.12.0/node_modules/caseless from the store
+Relinking /ql/node_modules/.pnpm/combined-stream@1.0.8/node_modules/combined-stream from the store
+Relinking /ql/node_modules/.pnpm/delayed-stream@1.0.0/node_modules/delayed-stream from the store
+Relinking /ql/node_modules/.pnpm/extend@3.0.2/node_modules/extend from the store
+Relinking /ql/node_modules/.pnpm/forever-agent@0.6.1/node_modules/forever-agent from the store
+Relinking /ql/node_modules/.pnpm/form-data@2.3.3/node_modules/form-data from the store
+Relinking /ql/node_modules/.pnpm/asynckit@0.4.0/node_modules/asynckit from the store
+Relinking /ql/node_modules/.pnpm/har-validator@5.1.5/node_modules/har-validator from the store
+Relinking /ql/node_modules/.pnpm/ajv@6.12.6/node_modules/ajv from the store
+Relinking /ql/node_modules/.pnpm/fast-deep-equal@3.1.3/node_modules/fast-deep-equal from the store
+Relinking /ql/node_modules/.pnpm/fast-json-stable-stringify@2.1.0/node_modules/fast-json-stable-stringify from the store
+Relinking /ql/node_modules/.pnpm/json-schema-traverse@0.4.1/node_modules/json-schema-traverse from the store
+Relinking /ql/node_modules/.pnpm/uri-js@4.4.1/node_modules/uri-js from the store
+Relinking /ql/node_modules/.pnpm/punycode@2.1.1/node_modules/punycode from the store
+Relinking /ql/node_modules/.pnpm/har-schema@2.0.0/node_modules/har-schema from the store
+Relinking /ql/node_modules/.pnpm/http-signature@1.2.0/node_modules/http-signature from the store
+Relinking /ql/node_modules/.pnpm/assert-plus@1.0.0/node_modules/assert-plus from the store
+Relinking /ql/node_modules/.pnpm/jsprim@1.4.2/node_modules/jsprim from the store
+Relinking /ql/node_modules/.pnpm/extsprintf@1.3.0/node_modules/extsprintf from the store
+Relinking /ql/node_modules/.pnpm/json-schema@0.4.0/node_modules/json-schema from the store
+Relinking /ql/node_modules/.pnpm/verror@1.10.0/node_modules/verror from the store
+Relinking /ql/node_modules/.pnpm/core-util-is@1.0.2/node_modules/core-util-is from the store
+Relinking /ql/node_modules/.pnpm/sshpk@1.17.0/node_modules/sshpk from the store
+Relinking /ql/node_modules/.pnpm/asn1@0.2.6/node_modules/asn1 from the store
+Relinking /ql/node_modules/.pnpm/bcrypt-pbkdf@1.0.2/node_modules/bcrypt-pbkdf from the store
+Relinking /ql/node_modules/.pnpm/tweetnacl@0.14.5/node_modules/tweetnacl from the store
+Relinking /ql/node_modules/.pnpm/dashdash@1.14.1/node_modules/dashdash from the store
+Relinking /ql/node_modules/.pnpm/ecc-jsbn@0.1.2/node_modules/ecc-jsbn from the store
+Relinking /ql/node_modules/.pnpm/jsbn@0.1.1/node_modules/jsbn from the store
+Relinking /ql/node_modules/.pnpm/getpass@0.1.7/node_modules/getpass from the store
+Relinking /ql/node_modules/.pnpm/is-typedarray@1.0.0/node_modules/is-typedarray from the store
+Relinking /ql/node_modules/.pnpm/isstream@0.1.2/node_modules/isstream from the store
+Relinking /ql/node_modules/.pnpm/json-stringify-safe@5.0.1/node_modules/json-stringify-safe from the store
+Relinking /ql/node_modules/.pnpm/oauth-sign@0.9.0/node_modules/oauth-sign from the store
+Relinking /ql/node_modules/.pnpm/performance-now@2.1.0/node_modules/performance-now from the store
+Relinking /ql/node_modules/.pnpm/qs@6.5.3/node_modules/qs from the store
+Relinking /ql/node_modules/.pnpm/tough-cookie@2.5.0/node_modules/tough-cookie from the store
+Relinking /ql/node_modules/.pnpm/psl@1.8.0/node_modules/psl from the store
+Relinking /ql/node_modules/.pnpm/tunnel-agent@0.6.0/node_modules/tunnel-agent from the store
+Relinking /ql/node_modules/.pnpm/semver@5.3.0/node_modules/semver from the store
+Relinking /ql/node_modules/.pnpm/tar@2.2.2/node_modules/tar from the store
+Relinking /ql/node_modules/.pnpm/block-stream@0.0.9/node_modules/block-stream from the store
+Relinking /ql/node_modules/.pnpm/which@1.3.1/node_modules/which from the store
+Relinking /ql/node_modules/.pnpm/isexe@2.0.0/node_modules/isexe from the store
+Relinking /ql/node_modules/.pnpm/typedi@0.8.0/node_modules/typedi from the store
+Relinking /ql/node_modules/.pnpm/winston@3.5.1/node_modules/winston from the store
+Relinking /ql/node_modules/.pnpm/@dabh+diagnostics@2.0.2/node_modules/@dabh/diagnostics from the store
+Relinking /ql/node_modules/.pnpm/colorspace@1.1.4/node_modules/colorspace from the store
+Relinking /ql/node_modules/.pnpm/color@3.2.1/node_modules/color from the store
+Relinking /ql/node_modules/.pnpm/color-convert@1.9.3/node_modules/color-convert from the store
+Relinking /ql/node_modules/.pnpm/color-name@1.1.3/node_modules/color-name from the store
+Relinking /ql/node_modules/.pnpm/color-string@1.9.0/node_modules/color-string from the store
+Relinking /ql/node_modules/.pnpm/color-name@1.1.4/node_modules/color-name from the store
+Relinking /ql/node_modules/.pnpm/simple-swizzle@0.2.2/node_modules/simple-swizzle from the store
+Relinking /ql/node_modules/.pnpm/is-arrayish@0.3.2/node_modules/is-arrayish from the store
+Relinking /ql/node_modules/.pnpm/text-hex@1.0.0/node_modules/text-hex from the store
+Relinking /ql/node_modules/.pnpm/enabled@2.0.0/node_modules/enabled from the store
+Relinking /ql/node_modules/.pnpm/kuler@2.0.0/node_modules/kuler from the store
+Relinking /ql/node_modules/.pnpm/async@3.2.3/node_modules/async from the store
+Relinking /ql/node_modules/.pnpm/is-stream@2.0.1/node_modules/is-stream from the store
+Relinking /ql/node_modules/.pnpm/logform@2.3.2/node_modules/logform from the store
+Relinking /ql/node_modules/.pnpm/colors@1.4.0/node_modules/colors from the store
+Relinking /ql/node_modules/.pnpm/fecha@4.2.1/node_modules/fecha from the store
+Relinking /ql/node_modules/.pnpm/safe-stable-stringify@1.1.1/node_modules/safe-stable-stringify from the store
+Relinking /ql/node_modules/.pnpm/triple-beam@1.3.0/node_modules/triple-beam from the store
+Relinking /ql/node_modules/.pnpm/one-time@1.0.0/node_modules/one-time from the store
+Relinking /ql/node_modules/.pnpm/fn.name@1.1.0/node_modules/fn.name from the store
+Relinking /ql/node_modules/.pnpm/readable-stream@3.6.0/node_modules/readable-stream from the store
+Relinking /ql/node_modules/.pnpm/string_decoder@1.3.0/node_modules/string_decoder from the store
+Relinking /ql/node_modules/.pnpm/safe-stable-stringify@2.3.1/node_modules/safe-stable-stringify from the store
+Relinking /ql/node_modules/.pnpm/stack-trace@0.0.10/node_modules/stack-trace from the store
+Relinking /ql/node_modules/.pnpm/winston-transport@4.5.0/node_modules/winston-transport from the store
+Relinking /ql/node_modules/.pnpm/yargs@17.3.1/node_modules/yargs from the store
+Relinking /ql/node_modules/.pnpm/cliui@7.0.4/node_modules/cliui from the store
+Relinking /ql/node_modules/.pnpm/string-width@4.2.3/node_modules/string-width from the store
+Relinking /ql/node_modules/.pnpm/emoji-regex@8.0.0/node_modules/emoji-regex from the store
+Relinking /ql/node_modules/.pnpm/is-fullwidth-code-point@3.0.0/node_modules/is-fullwidth-code-point from the store
+Relinking /ql/node_modules/.pnpm/strip-ansi@6.0.1/node_modules/strip-ansi from the store
+Relinking /ql/node_modules/.pnpm/ansi-regex@5.0.1/node_modules/ansi-regex from the store
+Relinking /ql/node_modules/.pnpm/wrap-ansi@7.0.0/node_modules/wrap-ansi from the store
+Relinking /ql/node_modules/.pnpm/ansi-styles@4.3.0/node_modules/ansi-styles from the store
+Relinking /ql/node_modules/.pnpm/color-convert@2.0.1/node_modules/color-convert from the store
+Relinking /ql/node_modules/.pnpm/escalade@3.1.1/node_modules/escalade from the store
+Relinking /ql/node_modules/.pnpm/get-caller-file@2.0.5/node_modules/get-caller-file from the store
+Relinking /ql/node_modules/.pnpm/require-directory@2.1.1/node_modules/require-directory from the store
+Relinking /ql/node_modules/.pnpm/y18n@5.0.8/node_modules/y18n from the store
+Relinking /ql/node_modules/.pnpm/yargs-parser@21.0.0/node_modules/yargs-parser from the store
+.../sqlite3@5.0.2/node_modules/sqlite3 install$ node-pre-gyp install --fallback-to-build
+.../esbuild@0.14.20/node_modules/esbuild postinstall$ node install.js
+.../esbuild@0.14.20/node_modules/esbuild postinstall: Done
+.../sqlite3@5.0.2/node_modules/sqlite3 install: node-pre-gyp info it worked if it ends with ok
+.../sqlite3@5.0.2/node_modules/sqlite3 install: node-pre-gyp info using node-pre-gyp@0.11.0
+.../sqlite3@5.0.2/node_modules/sqlite3 install: node-pre-gyp info using node@14.18.1 | linux | x64
+Progress: resolved 363, reused 363, downloaded 0, added 363, done
+.../sqlite3@5.0.2/node_modules/sqlite3 install: node-pre-gyp WARN Using request for node-pre-gyp https download 
+.../sqlite3@5.0.2/node_modules/sqlite3 install: node-pre-gyp info check checked for "/ql/node_modules/.pnpm/sqlite3@5.0.2/node_modules/sqlite3/lib/binding/napi-v3-linux-x64/node_sqlite3.node" (not found)
+.../sqlite3@5.0.2/node_modules/sqlite3 install: node-pre-gyp http GET https://mapbox-node-binary.s3.amazonaws.com/sqlite3/v5.0.2/napi-v3-linux-x64.tar.gz
+.../sqlite3@5.0.2/node_modules/sqlite3 install: node-pre-gyp http 200 https://mapbox-node-binary.s3.amazonaws.com/sqlite3/v5.0.2/napi-v3-linux-x64.tar.gz
+.../sqlite3@5.0.2/node_modules/sqlite3 install: node-pre-gyp info install unpacking napi-v3-linux-x64/node_sqlite3.node
+.../sqlite3@5.0.2/node_modules/sqlite3 install: node-pre-gyp info tarball done parsing tarball
+.../sqlite3@5.0.2/node_modules/sqlite3 install: node-pre-gyp info ok 
+.../sqlite3@5.0.2/node_modules/sqlite3 install: [sqlite3] Success: "/ql/node_modules/.pnpm/sqlite3@5.0.2/node_modules/sqlite3/lib/binding/napi-v3-linux-x64/node_sqlite3.node" is installed via remote
+.../sqlite3@5.0.2/node_modules/sqlite3 install: Done
+
+dependencies:
++ @otplib/preset-default 12.0.1
++ @sentry/node 6.17.5
++ @sentry/tracing 6.17.5
++ body-parser 1.19.1
++ celebrate 13.0.4
++ chokidar 3.5.3
++ cors 2.8.5
++ cron-parser 3.5.0
++ dotenv 8.6.0
++ esbuild 0.14.20
++ express 4.17.2
++ express-jwt 6.1.0
++ express-urlrewrite 1.4.0
++ got 11.8.3
++ hpagent 0.1.2
++ iconv-lite 0.6.3
++ jsonwebtoken 8.5.1
++ lodash 4.17.21
++ nedb 1.8.0
++ node-fetch 2.6.7
++ node-schedule 2.1.0
++ nodemailer 6.7.2
++ p-queue 6.6.2
++ reflect-metadata 0.1.13
++ sequelize 7.0.0-next.1
++ serve-handler 6.1.3
++ sockjs 0.3.24
++ sqlite3 5.0.2
++ typedi 0.8.0
++ uuid 8.3.2
++ winston 3.5.1
++ yargs 17.3.1
+
+ WARN  "prepare" script of "@" inside "/ql" is skipped as the working directory seems suspicious. To run this lifecycle script anyway, use "--unsafe-perm".
+---> 青龙依赖安装完成
+
+---> 3. 开始安装脚本依赖
+
+检测到 /ql/scripts 的依赖包有变化，运行 npm install...
+
+Lockfile is up-to-date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +211
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+download@8.0.0/node_modules/download from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+archive-type@4.0.0/node_modules/archive-type from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+file-type@4.4.0/node_modules/file-type from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+content-disposition@0.5.4/node_modules/content-disposition from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+safe-buffer@5.2.1/node_modules/safe-buffer from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+decompress@4.2.1/node_modules/decompress from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+decompress-tar@4.1.1/node_modules/decompress-tar from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+file-type@5.2.0/node_modules/file-type from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+is-stream@1.1.0/node_modules/is-stream from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+tar-stream@1.6.2/node_modules/tar-stream from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+inherits@2.0.4/node_modules/inherits from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+isarray@1.0.0/node_modules/isarray from the store
+Packages are hard linked from the content-addressable store to the virtual store.
+  Content-addressable store is at: /ql/scripts/.pnpm-store/v3
+  Virtual store is at:             node_modules/.pnpm
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+crypto-js@4.1.1/node_modules/crypto-js from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+bl@1.2.3/node_modules/bl from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+process-nextick-args@2.0.1/node_modules/process-nextick-args from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+safe-buffer@5.1.2/node_modules/safe-buffer from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+string_decoder@1.1.1/node_modules/string_decoder from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+util-deprecate@1.0.2/node_modules/util-deprecate from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+buffer-alloc@1.2.0/node_modules/buffer-alloc from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+buffer-alloc-unsafe@1.1.0/node_modules/buffer-alloc-unsafe from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+buffer-fill@1.0.0/node_modules/buffer-fill from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+once@1.4.0/node_modules/once from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+end-of-stream@1.4.4/node_modules/end-of-stream from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+wrappy@1.0.2/node_modules/wrappy from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+core-util-is@1.0.3/node_modules/core-util-is from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+fs-constants@1.0.0/node_modules/fs-constants from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+to-buffer@1.1.1/node_modules/to-buffer from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+xtend@4.0.2/node_modules/xtend from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+decompress-tarbz2@4.1.1/node_modules/decompress-tarbz2 from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+file-type@6.2.0/node_modules/file-type from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+seek-bzip@1.0.6/node_modules/seek-bzip from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+commander@2.20.3/node_modules/commander from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+unbzip2-stream@1.4.3/node_modules/unbzip2-stream from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+buffer@5.7.1/node_modules/buffer from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+base64-js@1.5.1/node_modules/base64-js from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+ieee754@1.2.1/node_modules/ieee754 from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+through@2.3.8/node_modules/through from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+decompress-targz@4.1.1/node_modules/decompress-targz from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+decompress-unzip@4.0.1/node_modules/decompress-unzip from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+file-type@3.9.0/node_modules/file-type from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+get-stream@2.3.1/node_modules/get-stream from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+object-assign@4.1.1/node_modules/object-assign from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+readable-stream@2.3.7/node_modules/readable-stream from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+pinkie-promise@2.0.1/node_modules/pinkie-promise from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+pinkie@2.0.4/node_modules/pinkie from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+pify@2.3.0/node_modules/pify from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+yauzl@2.10.0/node_modules/yauzl from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+buffer-crc32@0.2.13/node_modules/buffer-crc32 from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+fd-slicer@1.1.0/node_modules/fd-slicer from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+pend@1.2.0/node_modules/pend from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+graceful-fs@4.2.9/node_modules/graceful-fs from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+make-dir@1.3.0/node_modules/make-dir from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+pify@3.0.0/node_modules/pify from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+strip-dirs@2.1.0/node_modules/strip-dirs from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+is-natural-number@4.0.1/node_modules/is-natural-number from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+ext-name@5.0.0/node_modules/ext-name from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+ext-list@2.2.2/node_modules/ext-list from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+mime-db@1.51.0/node_modules/mime-db from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+sort-keys-length@1.0.1/node_modules/sort-keys-length from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+sort-keys@1.1.2/node_modules/sort-keys from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+is-plain-obj@1.1.0/node_modules/is-plain-obj from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+file-type@11.1.0/node_modules/file-type from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+filenamify@3.0.0/node_modules/filenamify from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+filename-reserved-regex@2.0.0/node_modules/filename-reserved-regex from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+strip-outer@1.0.1/node_modules/strip-outer from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+escape-string-regexp@1.0.5/node_modules/escape-string-regexp from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+trim-repeated@1.0.0/node_modules/trim-repeated from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+get-stream@4.1.0/node_modules/get-stream from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+pump@3.0.0/node_modules/pump from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+got@8.3.2/node_modules/got from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+@sindresorhus+is@0.7.0/node_modules/@sindresorhus/is from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+cacheable-request@2.1.4/node_modules/cacheable-request from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+clone-response@1.0.2/node_modules/clone-response from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+mimic-response@1.0.1/node_modules/mimic-response from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+get-stream@3.0.0/node_modules/get-stream from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+http-cache-semantics@3.8.1/node_modules/http-cache-semantics from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+keyv@3.0.0/node_modules/keyv from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+json-buffer@3.0.0/node_modules/json-buffer from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+lowercase-keys@1.0.0/node_modules/lowercase-keys from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+normalize-url@2.0.1/node_modules/normalize-url from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+prepend-http@2.0.0/node_modules/prepend-http from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+query-string@5.1.1/node_modules/query-string from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+decode-uri-component@0.2.0/node_modules/decode-uri-component from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+strict-uri-encode@1.1.0/node_modules/strict-uri-encode from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+sort-keys@2.0.0/node_modules/sort-keys from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+responselike@1.0.2/node_modules/responselike from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+lowercase-keys@1.0.1/node_modules/lowercase-keys from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+decompress-response@3.3.0/node_modules/decompress-response from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+duplexer3@0.1.4/node_modules/duplexer3 from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+into-stream@3.1.0/node_modules/into-stream from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+from2@2.3.0/node_modules/from2 from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+p-is-promise@1.1.0/node_modules/p-is-promise from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+is-retry-allowed@1.2.0/node_modules/is-retry-allowed from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+isurl@1.0.0/node_modules/isurl from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+has-to-string-tag-x@1.4.1/node_modules/has-to-string-tag-x from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+has-symbol-support-x@1.4.2/node_modules/has-symbol-support-x from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+is-object@1.0.2/node_modules/is-object from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+p-cancelable@0.4.1/node_modules/p-cancelable from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+p-timeout@2.0.1/node_modules/p-timeout from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+p-finally@1.0.0/node_modules/p-finally from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+timed-out@4.0.1/node_modules/timed-out from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+url-parse-lax@3.0.0/node_modules/url-parse-lax from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+url-to-options@1.0.1/node_modules/url-to-options from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+make-dir@2.1.0/node_modules/make-dir from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+pify@4.0.1/node_modules/pify from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+semver@5.7.1/node_modules/semver from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+p-event@2.3.1/node_modules/p-event from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+got@11.8.3/node_modules/got from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+@sindresorhus+is@4.4.0/node_modules/@sindresorhus/is from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+@szmarczak+http-timer@4.0.6/node_modules/@szmarczak/http-timer from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+defer-to-connect@2.0.1/node_modules/defer-to-connect from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+@types+cacheable-request@6.0.2/node_modules/@types/cacheable-request from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+@types+http-cache-semantics@4.0.1/node_modules/@types/http-cache-semantics from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+@types+keyv@3.1.3/node_modules/@types/keyv from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+@types+node@17.0.12/node_modules/@types/node from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+@types+responselike@1.0.0/node_modules/@types/responselike from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+cacheable-lookup@5.0.4/node_modules/cacheable-lookup from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+cacheable-request@7.0.2/node_modules/cacheable-request from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+get-stream@5.2.0/node_modules/get-stream from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+http-cache-semantics@4.1.0/node_modules/http-cache-semantics from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+keyv@4.0.5/node_modules/keyv from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+json-buffer@3.0.1/node_modules/json-buffer from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+lowercase-keys@2.0.0/node_modules/lowercase-keys from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+normalize-url@6.1.0/node_modules/normalize-url from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+responselike@2.0.0/node_modules/responselike from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+decompress-response@6.0.0/node_modules/decompress-response from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+mimic-response@3.1.0/node_modules/mimic-response from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+http2-wrapper@1.0.3/node_modules/http2-wrapper from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+quick-lru@5.1.1/node_modules/quick-lru from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+resolve-alpn@1.2.1/node_modules/resolve-alpn from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+p-cancelable@2.1.1/node_modules/p-cancelable from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+http-server@0.12.3/node_modules/http-server from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+basic-auth@1.1.0/node_modules/basic-auth from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+colors@1.4.0/node_modules/colors from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+corser@2.0.1/node_modules/corser from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+ecstatic@3.3.2/node_modules/ecstatic from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+he@1.2.0/node_modules/he from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+mime@1.6.0/node_modules/mime from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+minimist@1.2.5/node_modules/minimist from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+url-join@2.0.5/node_modules/url-join from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+http-proxy@1.18.1/node_modules/http-proxy from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+eventemitter3@4.0.7/node_modules/eventemitter3 from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+follow-redirects@1.14.7/node_modules/follow-redirects from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+requires-port@1.0.0/node_modules/requires-port from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+opener@1.5.2/node_modules/opener from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+portfinder@1.0.28/node_modules/portfinder from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+async@2.6.3/node_modules/async from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+debug@3.2.7/node_modules/debug from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+ms@2.1.3/node_modules/ms from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+lodash@4.17.21/node_modules/lodash from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+mkdirp@0.5.5/node_modules/mkdirp from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+secure-compare@3.0.1/node_modules/secure-compare from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+union@0.5.0/node_modules/union from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+qs@6.10.3/node_modules/qs from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+side-channel@1.0.4/node_modules/side-channel from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+call-bind@1.0.2/node_modules/call-bind from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+function-bind@1.1.1/node_modules/function-bind from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+get-intrinsic@1.1.1/node_modules/get-intrinsic from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+has@1.0.3/node_modules/has from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+has-symbols@1.0.2/node_modules/has-symbols from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+object-inspect@1.12.0/node_modules/object-inspect from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+qrcode-terminal@0.12.0/node_modules/qrcode-terminal from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+request@2.88.2/node_modules/request from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+aws-sign2@0.7.0/node_modules/aws-sign2 from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+aws4@1.11.0/node_modules/aws4 from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+caseless@0.12.0/node_modules/caseless from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+combined-stream@1.0.8/node_modules/combined-stream from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+delayed-stream@1.0.0/node_modules/delayed-stream from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+extend@3.0.2/node_modules/extend from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+forever-agent@0.6.1/node_modules/forever-agent from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+form-data@2.3.3/node_modules/form-data from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+asynckit@0.4.0/node_modules/asynckit from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+mime-types@2.1.34/node_modules/mime-types from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+har-validator@5.1.5/node_modules/har-validator from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+ajv@6.12.6/node_modules/ajv from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+fast-deep-equal@3.1.3/node_modules/fast-deep-equal from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+fast-json-stable-stringify@2.1.0/node_modules/fast-json-stable-stringify from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+json-schema-traverse@0.4.1/node_modules/json-schema-traverse from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+uri-js@4.4.1/node_modules/uri-js from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+punycode@2.1.1/node_modules/punycode from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+har-schema@2.0.0/node_modules/har-schema from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+http-signature@1.2.0/node_modules/http-signature from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+assert-plus@1.0.0/node_modules/assert-plus from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+jsprim@1.4.2/node_modules/jsprim from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+extsprintf@1.3.0/node_modules/extsprintf from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+json-schema@0.4.0/node_modules/json-schema from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+verror@1.10.0/node_modules/verror from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+core-util-is@1.0.2/node_modules/core-util-is from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+sshpk@1.17.0/node_modules/sshpk from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+asn1@0.2.6/node_modules/asn1 from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+safer-buffer@2.1.2/node_modules/safer-buffer from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+bcrypt-pbkdf@1.0.2/node_modules/bcrypt-pbkdf from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+tweetnacl@0.14.5/node_modules/tweetnacl from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+dashdash@1.14.1/node_modules/dashdash from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+ecc-jsbn@0.1.2/node_modules/ecc-jsbn from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+jsbn@0.1.1/node_modules/jsbn from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+getpass@0.1.7/node_modules/getpass from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+is-typedarray@1.0.0/node_modules/is-typedarray from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+isstream@0.1.2/node_modules/isstream from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+json-stringify-safe@5.0.1/node_modules/json-stringify-safe from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+oauth-sign@0.9.0/node_modules/oauth-sign from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+performance-now@2.1.0/node_modules/performance-now from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+qs@6.5.3/node_modules/qs from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+tough-cookie@2.5.0/node_modules/tough-cookie from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+psl@1.8.0/node_modules/psl from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+tunnel-agent@0.6.0/node_modules/tunnel-agent from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+uuid@3.4.0/node_modules/uuid from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+tough-cookie@4.0.0/node_modules/tough-cookie from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.nlark.com+universalify@0.1.2/node_modules/universalify from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+tunnel@0.0.6/node_modules/tunnel from the store
+Relinking /ql/scripts/node_modules/.pnpm/registry.npmmirror.com+ws@7.5.6/node_modules/ws from the store
+
+dependencies:
++ crypto-js 4.1.1
++ download 8.0.0
++ got 11.8.3
++ http-server 0.12.3
++ qrcode-terminal 0.12.0
++ request 2.88.2
++ tough-cookie 4.0.0
++ tunnel 0.0.6
++ ws 7.5.6
+
+Progress: resolved 211, reused 211, downloaded 0, added 211, done
+---> 脚本依赖安装完成
+
+
+=====> 检测结束
+
+
+## 执行结束... 2022-02-08 18:30:29  耗时 8 秒

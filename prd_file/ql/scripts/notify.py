@@ -534,7 +534,7 @@ def send(title: str, content: str) -> None:
 
 
 def main():
-    send("title5900", "content")
+    send("title", "content")
 
 
 if __name__ == "__main__":
