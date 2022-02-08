@@ -22,11 +22,11 @@ var EnvStatus;
 })(EnvStatus = exports.EnvStatus || (exports.EnvStatus = {}));
 exports.initEnvPosition = 9999999999;
 exports.EnvModel = _1.sequelize.define('Env', {
-    value: sequelize_1.DataTypes.STRING,
+    value: { type: sequelize_1.DataTypes.STRING, unique: 'compositeIndex' },
     timestamp: sequelize_1.DataTypes.STRING,
     status: sequelize_1.DataTypes.NUMBER,
     position: sequelize_1.DataTypes.NUMBER,
-    name: sequelize_1.DataTypes.STRING,
+    name: { type: sequelize_1.DataTypes.STRING, unique: 'compositeIndex' },
     remarks: sequelize_1.DataTypes.STRING,
 });
 //# sourceMappingURL=env.js.map

@@ -15,7 +15,15 @@ const auth_1 = require("../data/auth");
 const data_1 = require("../data");
 exports.default = async () => {
     try {
-        await data_1.sequelize.sync({ alter: true });
+        await data_1.sequelize.sync();
+        await new Promise((resolve) => setTimeout(() => resolve(null), 5000));
+        // try {
+        //   const queryInterface = sequelize.getQueryInterface();
+        //   await queryInterface.addIndex('Crontabs', ['command'], { unique: true });
+        //   await queryInterface.addIndex('Envs', ['name', 'value'], { unique: true });
+        //   await queryInterface.addIndex('Apps', ['name'], { unique: true });
+        // } catch (error) {
+        // }
         const crondbExist = await util_1.fileExist(config_1.default.cronDbFile);
         const dependenceDbExist = await util_1.fileExist(config_1.default.dependenceDbFile);
         const envDbExist = await util_1.fileExist(config_1.default.envDbFile);

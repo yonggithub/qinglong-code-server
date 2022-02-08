@@ -267,8 +267,17 @@ let UserService = class UserService {
         return (doc && doc.info) || {};
     }
     async updateAuthDb(payload) {
-        await auth_1.AuthModel.upsert(Object.assign({}, payload));
-        const doc = await this.getDb({ type: payload.type });
+        let doc = await auth_1.AuthModel.findOne({ type: payload.type });
+        if (doc) {
+            const updateResult = await auth_1.AuthModel.update(payload, {
+                where: { id: doc.id },
+                returning: true,
+            });
+            doc = updateResult[1][0];
+        }
+        else {
+            doc = await auth_1.AuthModel.create(payload, { returning: true });
+        }
         return doc;
     }
     async getDb(query) {

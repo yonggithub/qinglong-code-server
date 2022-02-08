@@ -21,7 +21,7 @@ var CrontabStatus;
     CrontabStatus[CrontabStatus["queued"] = 3] = "queued";
 })(CrontabStatus = exports.CrontabStatus || (exports.CrontabStatus = {}));
 exports.AppModel = _1.sequelize.define('App', {
-    name: sequelize_1.DataTypes.STRING,
+    name: { type: sequelize_1.DataTypes.STRING, unique: 'name' },
     scopes: sequelize_1.DataTypes.JSON,
     client_id: sequelize_1.DataTypes.STRING,
     client_secret: sequelize_1.DataTypes.STRING,

@@ -36,7 +36,7 @@ if (envFound.error) {
     throw new Error("⚠️  Couldn't find .env file  ⚠️");
 }
 exports.default = {
-    port: parseInt(process.env.PORT, 10),
+    port: parseInt(process.env.BACK_PORT, 10),
     cronPort: parseInt(process.env.CRON_PORT, 10),
     secret: process.env.SECRET || util_1.createRandomString(16, 32),
     logs: {

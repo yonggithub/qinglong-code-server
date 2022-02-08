@@ -45,12 +45,6 @@ let CronService = class CronService {
         return doc;
     }
     async insert(payload) {
-        const cron = await cron_1.CrontabModel.findOne({
-            where: { command: payload.command },
-        });
-        if (cron) {
-            return cron;
-        }
         return await cron_1.CrontabModel.create(payload, { returning: true });
     }
     async update(payload) {
@@ -149,7 +143,7 @@ let CronService = class CronService {
         try {
             const result = await cron_1.CrontabModel.findAll({
                 where: query,
-                order: [['updatedAt', 'DESC']],
+                order: [['createdAt', 'DESC']],
             });
             return result;
         }
@@ -177,7 +171,8 @@ let CronService = class CronService {
                 }
             }
             const err = await this.killTask(doc.command);
-            if (doc.log_path) {
+            const logFileExist = await util_1.fileExist(doc.log_path);
+            if (doc.log_path && logFileExist) {
                 const str = err ? `\n${err}` : '';
                 fs_1.default.appendFileSync(`${doc.log_path}`, `${str}\n## 执行结束...  ${new Date()
                     .toLocaleString('zh', { hour12: false })

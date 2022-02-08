@@ -10,5 +10,10 @@ exports.sequelize = new sequelize_1.Sequelize({
     dialect: 'sqlite',
     storage: `${index_1.default.dbPath}database.sqlite`,
     logging: false,
+    pool: {
+        max: 6,
+        min: 0,
+        idle: 30000,
+    },
 });
 //# sourceMappingURL=index.js.map
