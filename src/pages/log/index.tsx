@@ -128,7 +128,7 @@ const Log = ({ headerStyle, isPhone, theme }: any) => {
             value={select}
             dropdownStyle={{ maxHeight: 400, overflow: 'auto' }}
             treeData={data}
-            placeholder="请选择日志"
+            placeholder="请选择日志文件"
             showSearch
             onSelect={onSelect}
           />,
@@ -147,8 +147,6 @@ const Log = ({ headerStyle, isPhone, theme }: any) => {
                   <Input.Search
                     className={styles['left-tree-search']}
                     onChange={onSearch}
-                    placeholder="请输入日志名"
-                    allowClear
                   ></Input.Search>
                   <div className={styles['left-tree-scroller']} ref={treeDom}>
                     <Tree

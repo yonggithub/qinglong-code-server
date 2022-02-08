@@ -60,7 +60,6 @@ original_name=(
 
 init_env() {
     export NODE_PATH=/usr/local/bin:/usr/local/pnpm-global/5/node_modules:/usr/local/lib/node_modules
-    export PYTHONUNBUFFERED=1
 }
 
 import_config() {
@@ -70,7 +69,6 @@ import_config() {
     command_timeout_time=${CommandTimeoutTime:-"1h"}
     proxy_url=${ProxyUrl:-""}
     file_extensions=${RepoFileExtensions:-"js py"}
-    current_branch=${QL_BRANCH}
 
     if [[ -n "${DefaultCronRule}" ]]; then
         default_cron="${DefaultCronRule}"
@@ -304,8 +302,9 @@ git_clone_scripts() {
     
     set_proxy
     git clone $part_cmd $url $dir
-    exit_status=$?
     unset_proxy
+
+    exit_status=$?
 }
 
 git_pull_scripts() {

@@ -83,16 +83,15 @@ exports.default = ({ app }) => {
                 }
             }
         }
-        const originPath = `${req.baseUrl}${req.path === '/' ? '' : req.path}`;
         if (!headerToken &&
-            originPath &&
-            config_1.default.apiWhiteList.includes(originPath) &&
-            originPath !== '/api/crons/status') {
+            req.path &&
+            config_1.default.apiWhiteList.includes(req.path) &&
+            req.path !== '/api/crons/status') {
             return next();
         }
         const remoteAddress = req.socket.remoteAddress;
         if (remoteAddress === '::ffff:127.0.0.1' &&
-            originPath === '/api/crons/status') {
+            req.path === '/api/crons/status') {
             return next();
         }
         const data = fs_1.default.readFileSync(config_1.default.authConfigFile, 'utf8');

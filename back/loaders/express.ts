@@ -68,19 +68,18 @@ export default ({ app }: { app: Application }) => {
       }
     }
 
-    const originPath = `${req.baseUrl}${req.path === '/' ? '' : req.path}`;
     if (
       !headerToken &&
-      originPath &&
-      config.apiWhiteList.includes(originPath) &&
-      originPath !== '/api/crons/status'
+      req.path &&
+      config.apiWhiteList.includes(req.path) &&
+      req.path !== '/api/crons/status'
     ) {
       return next();
     }
     const remoteAddress = req.socket.remoteAddress;
     if (
       remoteAddress === '::ffff:127.0.0.1' &&
-      originPath === '/api/crons/status'
+      req.path === '/api/crons/status'
     ) {
       return next();
     }

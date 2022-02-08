@@ -61,12 +61,8 @@ let EnvService = class EnvService {
         return docs;
     }
     async insert(payloads) {
-        const result = [];
-        for (const env of payloads) {
-            const doc = await env_1.EnvModel.create(env, { returning: true });
-            result.push(doc);
-        }
-        return result;
+        const docs = await env_1.EnvModel.bulkCreate(payloads);
+        return docs;
     }
     async update(payload) {
         const newDoc = await this.updateDb(payload);

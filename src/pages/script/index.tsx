@@ -413,7 +413,7 @@ const Script = ({ headerStyle, isPhone, theme, socketMessage }: any) => {
                 value={select}
                 dropdownStyle={{ maxHeight: 400, overflow: 'auto' }}
                 treeData={data}
-                placeholder="请选择脚本"
+                placeholder="请选择脚本文件"
                 showSearch
                 onSelect={onSelect}
               />,
@@ -477,8 +477,6 @@ const Script = ({ headerStyle, isPhone, theme, socketMessage }: any) => {
                   <Input.Search
                     className={styles['left-tree-search']}
                     onChange={onSearch}
-                    placeholder="请输入脚本名"
-                    allowClear
                   ></Input.Search>
                   <div className={styles['left-tree-scroller']} ref={treeDom}>
                     <Tree

@@ -37,8 +37,8 @@ let OpenService = class OpenService {
         const doc = await this.insert(tab);
         return Object.assign(Object.assign({}, doc), { tokens: [] });
     }
-    async insert(payload) {
-        const doc = await open_1.AppModel.create(payload, { returning: true });
+    async insert(payloads) {
+        const doc = await open_1.AppModel.create(payloads, { returning: true });
         return doc.get({ plain: true });
     }
     async update(payload) {
