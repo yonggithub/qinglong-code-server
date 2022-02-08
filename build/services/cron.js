@@ -147,10 +147,7 @@ let CronService = class CronService {
             }
         }
         try {
-            const result = await cron_1.CrontabModel.findAll({
-                where: query,
-                order: [['updatedAt', 'DESC']],
-            });
+            const result = await cron_1.CrontabModel.findAll({ where: query });
             return result;
         }
         catch (error) {
@@ -184,7 +181,7 @@ let CronService = class CronService {
                     .replace(' 24:', ' 00:')} `);
             }
         }
-        await cron_1.CrontabModel.update({ status: cron_1.CrontabStatus.idle, pid: undefined }, { where: { id: ids } });
+        await cron_1.CrontabModel.update({ status: cron_1.CrontabStatus.queued, pid: undefined }, { where: { id: ids } });
     }
     async killTask(name) {
         let taskCommand = `ps -ef | grep "${name}" | grep -v grep | awk '{print $1}'`;

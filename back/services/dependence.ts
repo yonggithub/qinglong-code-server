@@ -1,6 +1,7 @@
 import { Service, Inject } from 'typedi';
 import winston from 'winston';
 import config from '../config';
+import DataStore from 'nedb';
 import {
   Dependence,
   InstallDependenceCommandTypes,
@@ -63,7 +64,6 @@ export default class DependenceService {
     );
     const docs = await DependenceModel.findAll({ where: { id: ids } });
     this.installOrUninstallDependencies(docs, false);
-    return docs;
   }
 
   public async removeDb(ids: number[]) {

@@ -36,20 +36,16 @@ const EnvModal = ({
     } else {
       payload = { ...values, id: env.id };
     }
-    try {
-      const { code, data } = await request[method](`${config.apiPrefix}envs`, {
-        data: payload,
-      });
-      if (code === 200) {
-        message.success(env ? '更新变量成功' : '新建变量成功');
-      } else {
-        message.error(data);
-      }
-      setLoading(false);
-      handleCancel(data);
-    } catch (error: any) {
-      setLoading(false);
+    const { code, data } = await request[method](`${config.apiPrefix}envs`, {
+      data: payload,
+    });
+    if (code === 200) {
+      message.success(env ? '更新变量成功' : '新建变量成功');
+    } else {
+      message.error(data);
     }
+    setLoading(false);
+    handleCancel(data);
   };
 
   useEffect(() => {

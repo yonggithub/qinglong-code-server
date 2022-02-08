@@ -163,10 +163,7 @@ export default class CronService {
       }
     }
     try {
-      const result = await CrontabModel.findAll({
-        where: query,
-        order: [['updatedAt', 'DESC']],
-      });
+      const result = await CrontabModel.findAll({ where: query });
       return result as any;
     } catch (error) {
       throw error;
@@ -212,7 +209,7 @@ export default class CronService {
     }
 
     await CrontabModel.update(
-      { status: CrontabStatus.idle, pid: undefined },
+      { status: CrontabStatus.queued, pid: undefined },
       { where: { id: ids } },
     );
   }

@@ -94,22 +94,7 @@ const Dependence = ({ headerStyle, isPhone, socketMessage }: any) => {
       dataIndex: 'timestamp',
       align: 'center' as const,
       render: (text: string, record: any) => {
-        const language = navigator.language || navigator.languages[0];
-        const time = record.createdAt || record.timestamp;
-        const date = new Date(time)
-          .toLocaleString(language, {
-            hour12: false,
-          })
-          .replace(' 24:', ' 00:');
-        return (
-          <Tooltip
-            placement="topLeft"
-            title={date}
-            trigger={['hover', 'click']}
-          >
-            <span>{date}</span>
-          </Tooltip>
-        );
+        return <span>{new Date(record.timestamp).toLocaleString()}</span>;
       },
     },
     {

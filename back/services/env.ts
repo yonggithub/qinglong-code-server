@@ -3,6 +3,7 @@ import winston from 'winston';
 import { getFileContentByName } from '../config/util';
 import config from '../config';
 import * as fs from 'fs';
+import DataStore from 'nedb';
 import { Env, EnvModel, EnvStatus, initEnvPosition } from '../data/env';
 import _ from 'lodash';
 import { Op } from 'sequelize';

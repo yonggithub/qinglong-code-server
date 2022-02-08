@@ -61,17 +61,7 @@ let OpenService = class OpenService {
         await open_1.AppModel.destroy({ where: { id: ids } });
     }
     async resetSecret(id) {
-        const tab = {
-            client_secret: util_1.createRandomString(24, 24),
-            tokens: [],
-            id,
-        };
-        // const doc = await this.get(id);
-        // const tab = new App({ ...doc });
-        // tab.client_secret = createRandomString(24, 24);
-        // tab.tokens = [];
-        // const newDoc = await this.updateDb(tab);
-        // return newDoc;
+        const tab = { client_secret: util_1.createRandomString(24, 24), tokens: [] };
         const newDoc = await this.updateDb(tab);
         return newDoc;
     }

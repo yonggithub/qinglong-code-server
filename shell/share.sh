@@ -67,7 +67,7 @@ import_config() {
     [[ -f $file_env ]] && . $file_env
 
     command_timeout_time=${CommandTimeoutTime:-"1h"}
-    proxy_url=${ProxyUrl:-""}
+    github_proxy_url=${GithubProxyUrl:-""}
     file_extensions=${RepoFileExtensions:-"js py"}
 
     if [[ -n "${DefaultCronRule}" ]]; then
@@ -75,18 +75,6 @@ import_config() {
     else
         default_cron="$(random_range 0 59) $(random_range 0 23) * * *"
     fi
-}
-
-set_proxy() {
-    if [[ $proxy_url ]]; then
-        export http_proxy="${proxy_url}"
-        export https_proxy="${proxy_url}"
-    fi
-}
-
-unset_proxy() {
-    unset http_proxy
-    unset https_proxy
 }
 
 make_dir() {
@@ -299,11 +287,7 @@ git_clone_scripts() {
     local branch=$3
     [[ $branch ]] && local part_cmd="-b $branch "
     echo -e "开始克隆仓库 $url 到 $dir\n"
-    
-    set_proxy
     git clone $part_cmd $url $dir
-    unset_proxy
-
     exit_status=$?
 }
 
@@ -314,14 +298,10 @@ git_pull_scripts() {
     [[ $branch ]] && local part_cmd="origin/${branch}"
     cd $dir_work
     echo -e "开始更新仓库：$dir_work\n"
-
-    set_proxy
     git fetch --all
     exit_status=$?
     git reset --hard $part_cmd
     git pull
-    unset_proxy
-    
     cd $dir_current
 }
 
