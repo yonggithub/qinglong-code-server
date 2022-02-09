@@ -66,6 +66,7 @@ let DependenceService = class DependenceService {
         await dependence_1.DependenceModel.update({ status: dependence_1.DependenceStatus.removing, log: [] }, { where: { id: ids } });
         const docs = await dependence_1.DependenceModel.findAll({ where: { id: ids } });
         this.installOrUninstallDependencies(docs, false);
+        return docs;
     }
     async removeDb(ids) {
         await dependence_1.DependenceModel.destroy({ where: { id: ids } });

@@ -2,7 +2,6 @@ import { Service, Inject } from 'typedi';
 import winston from 'winston';
 import { createRandomString } from '../config/util';
 import config from '../config';
-import DataStore from 'nedb';
 import { App, AppModel } from '../data/open';
 import { v4 as uuidV4 } from 'uuid';
 import sequelize, { Op } from 'sequelize';
@@ -25,8 +24,8 @@ export default class OpenService {
     return { ...doc, tokens: [] };
   }
 
-  public async insert(payloads: App): Promise<App> {
-    const doc = await AppModel.create(payloads, { returning: true });
+  public async insert(payload: App): Promise<App> {
+    const doc = await AppModel.create(payload, { returning: true });
     return doc.get({ plain: true }) as App;
   }
 
@@ -54,7 +53,17 @@ export default class OpenService {
   }
 
   public async resetSecret(id: number): Promise<App> {
-    const tab: any = { client_secret: createRandomString(24, 24), tokens: [] };
+    const tab: any = {
+      client_secret: createRandomString(24, 24),
+      tokens: [],
+      id,
+    };
+    // const doc = await this.get(id);
+    // const tab = new App({ ...doc });
+    // tab.client_secret = createRandomString(24, 24);
+    // tab.tokens = [];
+    // const newDoc = await this.updateDb(tab);
+    // return newDoc;
     const newDoc = await this.updateDb(tab);
     return newDoc;
   }

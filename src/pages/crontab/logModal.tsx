@@ -61,7 +61,7 @@ const CronLogModal = ({
                   <Countdown
                     className="inline-countdown"
                     format="ss"
-                    value={Date.now() + 1000 * 10}
+                    value={Date.now() + 1000 * 30}
                   />
                   秒后自动刷新
                 </span>
@@ -70,7 +70,7 @@ const CronLogModal = ({
             });
             setTimeout(() => {
               window.location.reload();
-            }, 10000);
+            }, 30000);
           }
         }
       })
@@ -90,7 +90,7 @@ const CronLogModal = ({
     return (
       <>
         {(executing || loading) && <Loading3QuartersOutlined spin />}
-        {!executing && <CheckCircleOutlined />}
+        {!executing && !loading && <CheckCircleOutlined />}
         <span style={{ marginLeft: 5 }}>日志-{cron && cron.name}</span>{' '}
       </>
     );

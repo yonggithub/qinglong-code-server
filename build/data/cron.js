@@ -34,12 +34,18 @@ var CrontabStatus;
     CrontabStatus[CrontabStatus["queued"] = 3] = "queued";
 })(CrontabStatus = exports.CrontabStatus || (exports.CrontabStatus = {}));
 exports.CrontabModel = _1.sequelize.define('Crontab', {
-    name: sequelize_1.DataTypes.STRING,
-    command: {
-        unique: 'command',
+    name: {
+        unique: 'compositeIndex',
         type: sequelize_1.DataTypes.STRING,
     },
-    schedule: sequelize_1.DataTypes.STRING,
+    command: {
+        unique: 'compositeIndex',
+        type: sequelize_1.DataTypes.STRING,
+    },
+    schedule: {
+        unique: 'compositeIndex',
+        type: sequelize_1.DataTypes.STRING,
+    },
     timestamp: sequelize_1.DataTypes.STRING,
     saved: sequelize_1.DataTypes.BOOLEAN,
     status: sequelize_1.DataTypes.NUMBER,

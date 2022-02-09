@@ -45,12 +45,6 @@ let CronService = class CronService {
         return doc;
     }
     async insert(payload) {
-        const cron = await cron_1.CrontabModel.findOne({
-            where: { command: payload.command },
-        });
-        if (cron) {
-            return cron;
-        }
         return await cron_1.CrontabModel.create(payload, { returning: true });
     }
     async update(payload) {
@@ -147,7 +141,10 @@ let CronService = class CronService {
             }
         }
         try {
-            const result = await cron_1.CrontabModel.findAll({ where: query });
+            const result = await cron_1.CrontabModel.findAll({
+                where: query,
+                order: [['createdAt', 'DESC']],
+            });
             return result;
         }
         catch (error) {
@@ -174,14 +171,15 @@ let CronService = class CronService {
                 }
             }
             const err = await this.killTask(doc.command);
-            if (doc.log_path) {
+            const logFileExist = await util_1.fileExist(doc.log_path);
+            if (doc.log_path && logFileExist) {
                 const str = err ? `\n${err}` : '';
                 fs_1.default.appendFileSync(`${doc.log_path}`, `${str}\n## 执行结束...  ${new Date()
                     .toLocaleString('zh', { hour12: false })
                     .replace(' 24:', ' 00:')} `);
             }
         }
-        await cron_1.CrontabModel.update({ status: cron_1.CrontabStatus.queued, pid: undefined }, { where: { id: ids } });
+        await cron_1.CrontabModel.update({ status: cron_1.CrontabStatus.idle, pid: undefined }, { where: { id: ids } });
     }
     async killTask(name) {
         let taskCommand = `ps -ef | grep "${name}" | grep -v grep | awk '{print $1}'`;
