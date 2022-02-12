@@ -2,3 +2,10 @@
 
 /ql
 error: remote origin already exists.
+[master 82de0bb] qinglong
+ 4 files changed, 20 insertions(+)
+ create mode 100644 bak/gitpush.sh
+ create mode 100644 log/gitpush/2022-02-12-09-20-52.log
+fatal: could not read Username for 'https://gitee.com': No such device or address
+
+## 执行结束... 2022-02-12 09:20:53 耗时 1 秒
