@@ -2,3 +2,9 @@
 
 /ql
 gitpush.sh: line 7: git config --global: command not found
+[master 619c67b] qinglong
+ 4 files changed, 15 insertions(+), 2 deletions(-)
+ create mode 100644 log/gitpush/2022-02-12-09-13-03.log
+fatal: could not read Username for 'https://gitee.com': No such device or address
+
+## 执行结束... 2022-02-12 09:13:04 耗时 1 秒
