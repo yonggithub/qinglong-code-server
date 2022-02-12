@@ -1,0 +1,11 @@
+## 开始执行... 2022-02-12 09:31:05
+
+/ql
+[master d1d99e5] qinglong
+ 4 files changed, 6 insertions(+), 2 deletions(-)
+ rewrite config/auth.json (93%)
+ create mode 100644 log/gitpush/2022-02-12-09-31-05.log
+remote: [31m[session-4842128a] [31m404 not found![0m[0m
+fatal: repository 'https://gitee.com/tangzhiyonggitee/project.git/' not found
+
+## 执行结束... 2022-02-12 09:31:06 耗时 1 秒

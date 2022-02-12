@@ -1,0 +1,10 @@
+## 开始执行... 2022-02-12 09:03:47
+
+fatal: not a git repository (or any parent up to mount point /ql)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+fatal: not a git repository (or any parent up to mount point /ql)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+fatal: not a git repository (or any parent up to mount point /ql)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+
+## 执行结束... 2022-02-12 09:03:47 耗时 0 秒
