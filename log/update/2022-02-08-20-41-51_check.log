@@ -1,0 +1,73 @@
+## 开始执行... 2022-02-08 20:41:51
+
+=====> 开始检测
+---> 1. 复制通知文件
+
+---> 复制一份 /ql/sample/notify.py 为 /ql/scripts/notify.py
+
+'/ql/sample/notify.py' -> '/ql/scripts/notify.py'
+
+---> 复制一份 /ql/sample/notify.js 为 /ql/scripts/sendNotify.js
+
+'/ql/sample/notify.js' -> '/ql/scripts/sendNotify.js'
+---> 通知文件复制完成
+
+---> 2. 复制nginx配置文件
+
+'/ql/docker/nginx.conf' -> '/etc/nginx/nginx.conf'
+'/ql/docker/front.conf' -> '/etc/nginx/conf.d/front.conf'
+---> 配置文件复制完成
+
+
+=====> 检测面板
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
+    />
+    <link rel="shortcut icon" type="image/x-icon" href="/images/g5.ico" />
+    <link rel="stylesheet" href="/umi.f778bd55.css" />
+    <script>
+      window.routerBase = "/";
+    </script>
+    <script>
+      //! umi version: 3.5.20
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script src="https://gw.alipayobjects.com/os/lib/react/16.13.1/umd/react.production.min.js"></script>
+    <script src="https://gw.alipayobjects.com/os/lib/react-dom/16.13.1/umd/react-dom.production.min.js"></script>
+    <script src="/umi.62ac4f09.js"></script>
+  </body>
+</html>
+
+=====> 面板服务启动正常
+
+=====> 检测nginx服务
+root        59     1  0 20:40 ?        00:00:00 nginx: master process nginx -c /etc/nginx/nginx.conf
+root        60    59  0 20:40 ?        00:00:00 nginx: worker process
+root        61    59  0 20:40 ?        00:00:00 nginx: worker process
+root        62    59  0 20:40 ?        00:00:00 nginx: worker process
+root        63    59  0 20:40 ?        00:00:00 nginx: worker process
+
+=====> nginx服务正常
+
+---> pm2日志
+
+=====> 检测后台
+
+{"code":401,"message":"jwt malformed"}
+
+=====> 后台服务启动正常
+
+
+=====> 检测结束
+
+
+## 执行结束... 2022-02-08 20:41:52  耗时 1 秒

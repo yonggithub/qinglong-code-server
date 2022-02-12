@@ -1,0 +1,2 @@
+00 18 * * * ID=2 task gitpush.sh now
+45 22 * * * ID=1 task test.py now
