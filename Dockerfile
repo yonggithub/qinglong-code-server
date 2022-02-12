@@ -30,5 +30,7 @@ RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && pnpm install --prod \
     && rm -rf /root/.pnpm-store 
 
+EXPOSE 22
+EXPOSE 5700
 
 ENTRYPOINT ["./docker-entrypoint.sh"]
