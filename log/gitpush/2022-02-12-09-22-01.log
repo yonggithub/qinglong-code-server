@@ -1,3 +1,12 @@
 ## 开始执行... 2022-02-12 09:22:02
 
 /ql
+[master b8f7b9c] qinglong
+ 4 files changed, 22 insertions(+), 15 deletions(-)
+ create mode 100644 log/gitpush/2022-02-12-09-22-01.log
+ rewrite scripts/gitpush.sh (87%)
+remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
+remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
+fatal: Authentication failed for 'https://github.com/tangzhiyonggitee/project.git/'
+
+## 执行结束... 2022-02-12 09:22:03 耗时 1 秒
