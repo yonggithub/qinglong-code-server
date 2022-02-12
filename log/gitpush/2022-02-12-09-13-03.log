@@ -1,0 +1,4 @@
+## 开始执行... 2022-02-12 09:13:03
+
+/ql
+gitpush.sh: line 7: git config --global: command not found
