@@ -7,9 +7,6 @@ pwd
 #git config --global user.email "15218828237@126.com"
 
 #git config --global credential.helper store 
-
-git remote add origin https://tangzhiyonggitee:a845538460@github.com/tangzhiyonggitee/project.git
-
 git add .
 git commit -m "qinglong"
 git push
