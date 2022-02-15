@@ -1,4 +1,6 @@
-FROM node:alpine
+#FROM node:alpine
+#FROM node:14.19.0-alpine 
+FROM node:lts-alpine3.11
 ARG QL_MAINTAINER="whyour"
 LABEL maintainer="${QL_MAINTAINER}"
 
@@ -30,6 +32,9 @@ RUN set -x \
                              python2 \
                              g++ \
                              make \
+			     libc6-compat \
+			     jq \
+    && ln -s /lib/libc.musl-x86_64.so.1 /lib/ld-linux-x86-64.so.2 \
     && rm -rf /var/cache/apk/* \
     && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" > /etc/timezone \
