@@ -1,3 +1,1 @@
-0 0 * * * ID=3 task test.js now
-00 18 * * * ID=2 task gitpush.sh now
 45 22 * * * ID=1 task test.py now

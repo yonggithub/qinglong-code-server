@@ -43,7 +43,7 @@ RUN set -x \
     && ssh-keygen -t rsa -P "" -f /etc/ssh/ssh_host_rsa_key  \
     && ssh-keygen -t ecdsa -P "" -f /etc/ssh/ssh_host_ecdsa_key  \
     && ssh-keygen -t ed25519 -P "" -f /etc/ssh/ssh_host_ed25519_key  \
-    && echo "root:Aa845538460.." | chpasswd \
+    && echo "root:111111" | chpasswd \
     && npm install -g pnpm \
     && pnpm install -g pm2 \
     && pnpm install -g ts-node typescript tslib \

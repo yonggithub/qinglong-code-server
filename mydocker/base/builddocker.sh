@@ -1,1 +1,1 @@
- docker build . -t vscodedemo
+ docker build . -t whyour/ql:base
