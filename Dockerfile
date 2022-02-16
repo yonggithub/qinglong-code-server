@@ -32,5 +32,5 @@ RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
 
 EXPOSE 22
 EXPOSE 5700
-
+EXPOSE 8080 
 ENTRYPOINT ["./docker-entrypoint.sh"]

@@ -47,7 +47,8 @@ echo -e "容器启动成功..."
 echo -e "\n请先访问5700端口，登录成功面板之后再执行添加定时任务..."
 echo -e "############################################################\n"
 
-/usr/sbin/sshd
+/usr/sbin/sshd &&
+/usr/bin/node /usr/lib/code-server --bind-addr 0.0.0.0:8080 &&
 crond -f >/dev/null
 
 exec "$@"
