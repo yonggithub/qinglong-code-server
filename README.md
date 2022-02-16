@@ -49,9 +49,12 @@ sh rundocker.sh
 ## 使用
 
 0.端口使用情况
-- 打开你的浏览器，访问青龙面板 http://127.0.0.1:5700
-- ssh，ssh root@host -p5722
-- code server访问地址 http://127.0.0.1:8080
+- 打开你的浏览器，访问青龙面板 http://127.0.0.1:5700 
+admin/111111
+- ssh，ssh root@host -p5722 
+password=111111
+- code server访问地址 http://127.0.0.1:8080 
+password:111111
 
 1. 内置命令
 
