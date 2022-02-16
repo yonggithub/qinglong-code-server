@@ -107,15 +107,7 @@ task <file_path> desi <env_name> <account_number>
 - [Umijs3.0](https://umijs.org)
 - [darkreader](https://github.com/darkreader/darkreader)
 - [admin-server](https://github.com/sunpu007/admin-server)
+- [martinussuherman/alpine-code-server](https://github.com/martinussuherman/alpine-code-server/blob/master/code-server)
 
-## 开发
-
-```bash
-$ git clone git@github.com:whyour/qinglong.git
-$ cd qinglong
-$ cp .env.example .env
-$ yarn install
-$ yarn start
-```
 
 
