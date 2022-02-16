@@ -99,6 +99,8 @@ task <file_path> desi <env_name> <account_number>
 * account_number: 任务执行时指定某个环境变量需要执行的账号序号
 
 ## 链接
+
+- [qinglong](https://github.com/whyour/qinglong)
 - [code-server](https://github.com/coder/code-server)
 - [martinussuherman/alpine-code-server](https://github.com/martinussuherman/alpine-code-server/blob/master/code-server)
 - [nevinee](https://gitee.com/evine)
